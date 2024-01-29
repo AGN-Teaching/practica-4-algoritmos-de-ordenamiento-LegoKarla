@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
     }
 
     TiemposAlgoritmos tiempos;
-    std::ofstream outputFile("resultados10^9.txt");
+    std::ofstream outputFile("resultados.txt");
     outputFile << "#Ejec.\t\tis_t\t\tss_t\t\tbs_t\t\tms_t\t\tqs_t" << std::endl;
 
     for (int i = 0; i < m; ++i) {
