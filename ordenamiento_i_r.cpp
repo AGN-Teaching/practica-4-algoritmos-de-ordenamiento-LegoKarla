@@ -9,6 +9,7 @@
 #include <cmath>
 #include <algorithm>
 
+// Estructura para almacenar los tiempos de ejecución de los algoritmos
 struct TiemposAlgoritmos {
     double is_t; // Tiempo de insertion sort
     double ss_t; // Tiempo de selection sort
@@ -17,6 +18,7 @@ struct TiemposAlgoritmos {
     double qs_t; // Tiempo de quicksort
 };
 
+// Función para ejecutar y medir el tiempo de un algoritmo con rango especificado
 template <typename Func>
 std::chrono::duration<double> ejecutar_y_medir_tiempo(Func algoritmo, std::vector<int>& arr, int inicio, int fin) {
     auto start = std::chrono::high_resolution_clock::now();
@@ -34,6 +36,7 @@ std::chrono::duration<double> ejecutar_y_medir_tiempo(Func algoritmo, std::vecto
     return end - start;
 }
 
+// Genera un arreglo aleatorio de tamaño n
 std::vector<int> generar_arreglo_aleatorio(int n) {
     std::vector<int> array;
     array.reserve(n);
@@ -43,10 +46,12 @@ std::vector<int> generar_arreglo_aleatorio(int n) {
     return array;
 }
 
+// Calcula el promedio de un vector de números
 double calcular_promedio(const std::vector<double>& tiempos) {
     return std::accumulate(tiempos.begin(), tiempos.end(), 0.0) / tiempos.size();
 }
 
+// Calcula la desviación estándar de un vector de números dados su promedio
 double calcular_desviacion_estandar(const std::vector<double>& tiempos, double promedio) {
     double suma_cuadrados = 0.0;
     for (double tiempo : tiempos) {
@@ -57,6 +62,7 @@ double calcular_desviacion_estandar(const std::vector<double>& tiempos, double p
 }
 
 int main(int argc, char *argv[]) {
+    // Verificar el número correcto de argumentos de línea de comandos
     if (argc != 4) {
         std::cout << "Sintaxis: " << argv[0] << " <tamaño_arreglo> <repeticiones> <lista_algoritmos>" << std::endl;
         std::cout << "Algoritmos:" << std::endl;
@@ -66,10 +72,12 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    // Obtener el tamaño del arreglo, el número de arreglos a generar y ordenar, y la lista de algoritmos desde los argumentos
     int n = std::stoi(argv[1]); // Tamaño del arreglo
     int m = std::stoi(argv[2]); // Número de arreglos a generar y ordenar
     std::string algoritmos_str(argv[3]); // Lista de algoritmos
 
+    // Almacenar los arreglos generados aleatoriamente
     std::vector<std::vector<int>> arrays;
     arrays.reserve(m);
 
@@ -78,20 +86,24 @@ int main(int argc, char *argv[]) {
         arrays.push_back(generar_arreglo_aleatorio(n));
     }
 
+    // Estructura para almacenar los tiempos de ejecución de los algoritmos
     TiemposAlgoritmos tiempos;
+
+    // Crear archivo para almacenar resultados
     std::ofstream outputFile("resultados.txt");
     outputFile << "#Ejec.\t\tis_t\t\tss_t\t\tbs_t\t\tms_t\t\tqs_t" << std::endl;
 
+    // Medir y almacenar los tiempos para cada arreglo
     for (int i = 0; i < m; ++i) {
+        // Medir el tiempo para algoritmos iterativos si están en la lista
         if (std::find(algoritmos_str.begin(), algoritmos_str.end(), 'i') != algoritmos_str.end()) {
-            // Medir el tiempo para algoritmos iterativos
             tiempos.is_t = ejecutar_y_medir_tiempo(insertion_sort, arrays[i]).count();
             tiempos.ss_t = ejecutar_y_medir_tiempo(selection_sort, arrays[i]).count();
             tiempos.bs_t = ejecutar_y_medir_tiempo(bubblesort, arrays[i]).count();
         }
 
+        // Medir el tiempo para algoritmos recursivos si están en la lista
         if (std::find(algoritmos_str.begin(), algoritmos_str.end(), 'r') != algoritmos_str.end()) {
-            // Medir el tiempo para algoritmos recursivos
             tiempos.ms_t = ejecutar_y_medir_tiempo(merge_sort, arrays[i], 0, arrays[i].size() - 1).count();
             tiempos.qs_t = ejecutar_y_medir_tiempo(quicksort, arrays[i], 0, arrays[i].size() - 1).count();
         }
@@ -102,26 +114,28 @@ int main(int argc, char *argv[]) {
                     << tiempos.bs_t << "\t" << tiempos.ms_t << "\t" << tiempos.qs_t << std::endl;
     }
 
+    // Cerrar el archivo de resultados
     outputFile.close();
 
-    // Calcular promedio y desviación estándar
+    // Calcular promedio y desviación estándar para cada algoritmo
     std::vector<double> tiempos_is, tiempos_ss, tiempos_bs, tiempos_ms, tiempos_qs;
 
     for (int i = 0; i < m; ++i) {
+        // Medir el tiempo para algoritmos iterativos si están en la lista
         if (std::find(algoritmos_str.begin(), algoritmos_str.end(), 'i') != algoritmos_str.end()) {
-            // Medir el tiempo para algoritmos iterativos
             tiempos_is.push_back(ejecutar_y_medir_tiempo(insertion_sort, arrays[i]).count());
             tiempos_ss.push_back(ejecutar_y_medir_tiempo(selection_sort, arrays[i]).count());
             tiempos_bs.push_back(ejecutar_y_medir_tiempo(bubblesort, arrays[i]).count());
         }
 
+        // Medir el tiempo para algoritmos recursivos si están en la lista
         if (std::find(algoritmos_str.begin(), algoritmos_str.end(), 'r') != algoritmos_str.end()) {
-            // Medir el tiempo para algoritmos recursivos
             tiempos_ms.push_back(ejecutar_y_medir_tiempo(merge_sort, arrays[i], 0, arrays[i].size() - 1).count());
             tiempos_qs.push_back(ejecutar_y_medir_tiempo(quicksort, arrays[i], 0, arrays[i].size() - 1).count());
         }
     }
 
+    // Calcular promedio y desviación estándar para cada algoritmo
     double promedio_is = calcular_promedio(tiempos_is);
     double desviacion_is = calcular_desviacion_estandar(tiempos_is, promedio_is);
 
@@ -137,6 +151,7 @@ int main(int argc, char *argv[]) {
     double promedio_qs = calcular_promedio(tiempos_qs);
     double desviacion_qs = calcular_desviacion_estandar(tiempos_qs, promedio_qs);
 
+    // Imprimir resultados de promedio y desviación estándar
     std::cout << "Promedio y desviación estándar de tiempos:" << std::endl;
     
     if (std::find(algoritmos_str.begin(), algoritmos_str.end(), 'i') != algoritmos_str.end()) {
@@ -152,3 +167,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
