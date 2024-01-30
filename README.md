@@ -19,6 +19,9 @@ A continuación se presentan las gráficas que ilustran estas métricas para cad
 
 [Incluir gráficas aquí]
 
+### Nota
+Cabe destacar que los experimentos con valores extremadamente grandes de n, específicamente n=500,000,000 y n=1,000,000,000, no pudieron ser realizados debido a que dichos valores exceden los límites de capacidad de procesamiento de la computadora utilizada para el análisis. En estos casos, el programa termina el proceso sin regresar ningún valor debido a la alta demanda de recursos computacionales.
+
 ## Análisis
 
 A partir de las gráficas y los datos obtenidos, se observa que:
