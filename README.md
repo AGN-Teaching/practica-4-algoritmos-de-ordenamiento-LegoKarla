@@ -1,5 +1,4 @@
 # Práctica 4: Algoritmos de ordenamiento
-Entendido, a continuación te presento una propuesta de cómo podría ser redactado el informe de la práctica en un formato adecuado:
 
 ## Objetivo
 
