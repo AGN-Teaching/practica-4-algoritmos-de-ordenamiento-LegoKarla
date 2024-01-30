@@ -15,11 +15,53 @@ Además, se genera un archivo de salida con los tiempos registrados en una estru
 Los resultados obtenidos muestran el tiempo promedio y la desviación estándar del tiempo de ejecución para cada algoritmo en función del tamaño del arreglo.
 Los resultados obtenidos revelan que el tiempo de ejecución de los algoritmos de ordenamiento exhibe una variación significativa en función del tamaño de los datos a ordenar (n). Quicksort se destacó consistentemente al mostrar un rendimiento superior en comparación con los algoritmos de orden cuadrático (insertion sort, selection sort, bubblesort). Además, se observó que los algoritmos recursivos (merge sort, quicksort) demostraron un mejor rendimiento para valores grandes de n. 
 
-A continuación se presentan las gráficas que ilustran estas métricas para cada algoritmo:
+A continuación se presentan las tablas con los tiempos de cada algoritmo:
 
-[Incluir gráficas aquí]
+### Promedio
 
-### Nota
+- Iteratividad:
+  
+![Promedio_iteraivo](T_Pi.png)
+
+- Recursividad:
+
+![Promedio_recursivo](T_Pr.png)
+
+
+### Desviación estándar
+
+- Iteratividad:
+
+![Desviación_e_iteraivo](T_Di.png)
+
+- Recursividad:
+
+![Desviación_e_recursivo](T_Dr.png)
+
+En un representación grafica:
+
+### Promedio
+
+- Iteratividad:
+  
+![GPromedio_iteraivo](G_Pi.jpg)
+
+- Recursividad:
+
+![GPromedio_recursivo](G_Pr.jpg)
+
+
+### Desviación estándar
+
+- Iteratividad:
+
+![GDesviación_e_iteraivo](G_Di.jpg)
+
+- Recursividad:
+
+![GDesviación_e_recursivo](G_Dr.jpg)
+
+#### Nota
 Cabe destacar que los experimentos con valores extremadamente grandes de n, específicamente n=500,000,000 y n=1,000,000,000, no pudieron ser realizados debido a que dichos valores exceden los límites de capacidad de procesamiento de la computadora utilizada para el análisis. En estos casos, el programa termina el proceso sin regresar ningún valor debido a la alta demanda de recursos computacionales.
 Asimismo, a partir de n=500,000, no se llevaron a cabo experimentos con los algoritmos insertion sort, selection sort y bubblesort, ya que el tiempo de ejecución para estos valores era considerablemente largo y el proceso finalizaba sin arrojar resultados. Estas limitaciones deben tenerse en cuenta al interpretar los resultados y al considerar la escalabilidad de los algoritmos para conjuntos de datos de gran tamaño.
 
