@@ -21,6 +21,7 @@ A continuación se presentan las gráficas que ilustran estas métricas para cad
 
 ### Nota
 Cabe destacar que los experimentos con valores extremadamente grandes de n, específicamente n=500,000,000 y n=1,000,000,000, no pudieron ser realizados debido a que dichos valores exceden los límites de capacidad de procesamiento de la computadora utilizada para el análisis. En estos casos, el programa termina el proceso sin regresar ningún valor debido a la alta demanda de recursos computacionales.
+Asimismo, a partir de n=500,000, no se llevaron a cabo experimentos con los algoritmos insertion sort, selection sort y bubblesort, ya que el tiempo de ejecución para estos valores era considerablemente largo y el proceso finalizaba sin arrojar resultados. Estas limitaciones deben tenerse en cuenta al interpretar los resultados y al considerar la escalabilidad de los algoritmos para conjuntos de datos de gran tamaño.
 
 ## Análisis
 
