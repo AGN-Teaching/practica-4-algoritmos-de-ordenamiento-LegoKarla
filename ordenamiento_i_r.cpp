@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
 
     // Crear archivo para almacenar resultados
     std::ofstream outputFile("resultados.txt");
-    outputFile << "#Ejec.\t\tis_t\t\tss_t\t\tbs_t\t\tms_t\t\tqs_t" << std::endl;
+    outputFile << "#Ejec.\tinserton sort\tselection sort\tbubblesort\tmerge sort\tquicksort" << std::endl;
 
     // Medir y almacenar los tiempos para cada arreglo
     for (int i = 0; i < m; ++i) {
