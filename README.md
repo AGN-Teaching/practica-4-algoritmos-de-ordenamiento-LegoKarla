@@ -29,6 +29,3 @@ En base a los resultados obtenidos, se puede concluir que...
 
 [Incluir conclusiones]
 
----
-
-Espero que este formato sea útil para tu informe. Si necesitas asistencia adicional o deseas realizar ajustes, no dudes en preguntar.
