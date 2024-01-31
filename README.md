@@ -144,4 +144,4 @@ En resumen:
 ## Futuras Mejoras
 
 - Agregar más algoritmos de ordenamiento para evaluación.
-- Mejorar presentación de resultados y análisis adicional.
+
