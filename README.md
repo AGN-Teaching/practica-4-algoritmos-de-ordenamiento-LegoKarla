@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/ke8zCzPd)
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=13574616)
 # Práctica 4: Análisis Experimental de Algoritmos de Ordenamiento
 
 
@@ -82,6 +84,18 @@ En una representación gráfica:
 - Recursividad:
 
 ![GDesviación_e_recursivo](G_Dr.jpg)
+
+El cálculo del promedio y la desviación estándar de los tiempos de ejecución de los algoritmos de ordenamiento es fundamental por varias razones:
+
+1. **Promedio:** El promedio proporciona una medida representativa del tiempo de ejecución esperado para cada algoritmo en relación al tamaño del conjunto de datos. Esta medida es útil para comparar el rendimiento relativo de los algoritmos y comprender cómo varía el tiempo de ejecución a medida que el tamaño del conjunto de datos aumenta.
+
+2. **Desviación estándar:** La desviación estándar indica la dispersión de los tiempos de ejecución alrededor del promedio. Proporciona información sobre la consistencia o variabilidad de los tiempos de ejecución. Una desviación estándar más pequeña sugiere una menor variabilidad en los tiempos de ejecución, lo que puede ser importante para evaluar la previsibilidad del rendimiento del algoritmo en diferentes situaciones.
+
+La práctica de realizar un análisis experimental del tiempo de ejecución de diferentes algoritmos de ordenamiento es crucial para entender y comparar su rendimiento en función del tamaño del conjunto de datos a ordenar. Esto permite seleccionar el algoritmo más adecuado en distintas situaciones y aplicaciones del mundo real, al tiempo que proporciona una comprensión clara de las fortalezas y debilidades de cada algoritmo.
+
+El resultado del análisis de los valores obtenidos al realizar el experimento proporciona una comparativa detallada del rendimiento de cada algoritmo en función del tamaño del conjunto de datos. Esto puede ayudar a identificar qué algoritmo es más eficiente para conjuntos de datos pequeños, medianos o grandes, y proporciona información valiosa para la selección del algoritmo más adecuado en diferentes escenarios. Además, el análisis puede revelar tendencias en el comportamiento de los algoritmos a medida que el tamaño del conjunto de datos aumenta, lo que es fundamental para comprender su desempeño en situaciones del mundo real.
+
+En resumen, el cálculo del promedio y la desviación estándar permite obtener una comprensión más completa del rendimiento de los algoritmos de ordenamiento en diferentes escenarios, lo que puede ser crucial para la toma de decisiones informadas sobre la selección de algoritmos en aplicaciones del mundo real.
 
 #### Nota
 Los experimentos con valores extremadamente grandes de n, específicamente n=500,000,000 y n=1,000,000,000, no pudieron ser realizados debido a limitaciones en los recursos computacionales. En estos casos, el programa termina el proceso sin regresar ningún valor debido a la alta demanda de recursos computacionales. Asimismo, a partir de n=500,000, no se llevaron a cabo experimentos con los algoritmos insertion sort, selection sort y bubblesort, ya que el tiempo de ejecución para estos valores era considerablemente largo y el proceso finalizaba sin arrojar resultados. Estas limitaciones deben tenerse en cuenta al interpretar los resultados y al considerar la escalabilidad de los algoritmos para conjuntos de datos de gran tamaño.
